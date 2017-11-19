@@ -10,16 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - view did load
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+    // MARK: - outlets
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
+    
+    // MARK: - interactions
+    
+    @IBAction func tapSetDateButton(_ sender: UIButton) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        
+        title = dateFormatter.string(from: datePicker.date)
     }
-
-
+    
 }
 
